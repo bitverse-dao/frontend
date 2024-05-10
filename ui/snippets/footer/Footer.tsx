@@ -9,7 +9,6 @@ import config from 'configs/app';
 import type { ResourceError } from 'lib/api/resources';
 import useApiQuery from 'lib/api/useApiQuery';
 import useFetch from 'lib/hooks/useFetch';
-import useIssueUrl from 'lib/hooks/useIssueUrl';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 import FooterLinkItem from './FooterLinkItem';
@@ -29,49 +28,31 @@ const Footer = () => {
     },
   });
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
-  const issueUrl = useIssueUrl(backendVersionData?.backend_version);
+
   const BLOCKSCOUT_LINKS = [
     {
-      icon: 'edit' as const,
+      icon: 'social/twitter' as const,
       iconSize: '16px',
-      text: 'Submit an issue',
-      url: issueUrl,
+      text: 'X (ex-Twitter)',
+      url: 'https://twitter.com/BitverseApp',
     },
     {
       icon: 'social/canny' as const,
       iconSize: '20px',
       text: 'Feature request',
-      url: 'https://blockscout.canny.io/feature-requests',
+      url: '',
     },
     {
-      icon: 'social/git' as const,
-      iconSize: '18px',
-      text: 'Contribute',
-      url: 'https://github.com/blockscout/blockscout',
-    },
-    {
-      icon: 'social/twitter' as const,
-      iconSize: '18px',
-      text: 'X (ex-Twitter)',
-      url: 'https://www.twitter.com/blockscoutcom',
+      icon: 'discussions' as const,
+      iconSize: '20px',
+      text: 'Telegram',
+      url: 'https://t.me/BitverseOfficial',
     },
     {
       icon: 'social/discord' as const,
       iconSize: '24px',
       text: 'Discord',
-      url: 'https://discord.gg/blockscout',
-    },
-    {
-      icon: 'discussions' as const,
-      iconSize: '20px',
-      text: 'Discussions',
-      url: 'https://github.com/orgs/blockscout/discussions',
-    },
-    {
-      icon: 'donate' as const,
-      iconSize: '20px',
-      text: 'Donate',
-      url: 'https://github.com/sponsors/blockscout',
+      url: 'https://discord.gg/EAQ5MPaKKK',
     },
   ];
 
