@@ -223,23 +223,6 @@ export default function useNavItems(): ReturnType {
         isActive: apiNavItems.some(item => isInternalItem(item) && item.isActive),
         subItems: apiNavItems,
       },
-      {
-        text: 'Other',
-        icon: 'gear',
-        subItems: [
-          {
-            text: 'Verify contract',
-            nextRoute: { pathname: '/contract-verification' as const },
-            isActive: pathname.startsWith('/contract-verification'),
-          },
-          config.features.gasTracker.isEnabled && {
-            text: 'Gas tracker',
-            nextRoute: { pathname: '/gas-tracker' as const },
-            isActive: pathname.startsWith('/gas-tracker'),
-          },
-          ...config.UI.sidebar.otherLinks,
-        ].filter(Boolean),
-      },
     ].filter(Boolean);
 
     const accountNavItems: ReturnType['accountNavItems'] = [
